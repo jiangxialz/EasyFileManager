@@ -1,19 +1,16 @@
 package com.efm.core.config;
 
-import com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor;
-import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.transaction.annotation.EnableTransactionManagement;
+
+import com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor;
 
 /**
  * MybatisPlus配置
  * @author gcc
  * @date 2020/8/24 12:31
  */
-@EnableTransactionManagement
 @Configuration
-@MapperScan("com.efm.*.mapper")
 public class MybatisPlusConfig {
 
     /**

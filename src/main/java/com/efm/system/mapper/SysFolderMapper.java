@@ -17,6 +17,5 @@ public interface SysFolderMapper extends BaseMapper<SysFolder> {
      * @param folderId
      * @return
      */
-    List<SysFolder> listChildren(@Param("folderId")String folderId);
-
+    List<SysFolder> listChildren(@Param("folderId") String folderId);
 }

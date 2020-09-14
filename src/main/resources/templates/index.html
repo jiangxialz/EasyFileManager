@@ -140,7 +140,7 @@
             url: '/file/list',
             height: 'full-137',
             cols: [[
-                {type: 'checkbox'},
+               // {type: 'checkbox'},
                 {field: 'name', title: '文件名', templet: fileNameFormat, event: 'openFileFolder', width: '70%', unresize: true, sort: true},
                 {field: 'size', title: '大小', templet: fileSizeFormat, width: '10%', unresize: true, sort: true},
                 {field: 'updateTime', title: '修改日期',  width: '17.1%', unresize: true, sort: true}
@@ -324,7 +324,9 @@
                 content: $('#editFolder').html(),
                 success: function (layero, dIndex) {
                     var folderId = $("#route").attr("data-folder-id");
+                    console.info("folderId:"+folderId);
                     var folderPath = $("#route").attr("data-folder-path");
+                    console.info("folderPath:"+folderPath);
                     // 回显表单数据
                     form.val('editFolderForm', {folderParentId : folderId, folderPath: folderPath});
                     // 表单提交事件
@@ -334,6 +336,7 @@
                         }else{
                             data.field.folderPath = data.field.folderName;
                         }
+                        console.info("data.field.folderPath:"+data.field.folderPath);
                         var loadIndex = layer.load(2);
                         $.post("/folder/createFolder", data.field, function (res) {
                             layer.close(loadIndex);
